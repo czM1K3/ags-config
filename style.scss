@@ -1,0 +1,83 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: rgba(10%, 10%, 10%, 0.5);
+
+window.bar {
+    background: transparent;
+    color: $fg-color;
+    font-weight: bold;
+    font-family: "DejaVuSansM Nerd Font";
+
+    >centerbox {
+        background: $bg-color;
+    }
+
+    .part {
+        background-color: rgba(40%, 40%, 40%, 0.5);
+        margin: 4px 5px;
+        padding: 2px 8px;
+        border-radius: 12px;
+
+        .workspace {
+            color: gray;
+            .focused {
+                color: white;
+            }
+        }
+
+        .trayitem {
+            padding: 0 3px;
+        }
+
+        .notification {
+            margin-right: 8px;
+        }
+
+        .battery {
+            padding: 1px;
+
+            levelbar {
+                trough block {
+                    border-radius: 10px;
+                }
+                &.normal trough block.filled {
+                    background-color: #13D98F;
+                }
+                &.low trough block.filled {
+                    background-color: red;
+                }
+            }
+
+            .charging levelbar trough block.filled {
+                background-color: royalblue;
+            }
+        }
+
+        .speaker {
+            padding: 1px;
+            levelbar {
+                trough block {
+                    border-radius: 10px;
+                }
+                &.mute trough block.filled {
+                    background-color: darkblue;
+                }
+                &.normal trough block.filled {
+                    background-color: orange;
+                }
+            }
+        }
+    }
+
+    button {
+        border-radius: 8px;
+        background: transparent;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+
+        &:hover {
+            background: rgba(40%, 40%, 40%, 0.5);
+        }
+    }
+}
