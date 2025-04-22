@@ -15,8 +15,8 @@ export function Speaker(): JSX.Element {
       }}
       visible={config.showSpeaker}
     >
-      <box spacing={4}>
-        <icon icon={bind(speaker, "volumeIcon")} />
+      <box spacing={12}>
+        <label label={bind(speaker, "mute").as((x) => x ? "" : "")} />
         <overlay widthRequest={80} className="speaker">
           <levelbar
             widthRequest={80}

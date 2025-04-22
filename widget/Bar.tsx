@@ -10,6 +10,7 @@ import { Bluetooth } from "./right/Bluetooth";
 import { Battery } from "./right/Battery";
 import { Speaker } from "./right/Speaker";
 import { Microphone } from "./right/Microphone";
+import { Brightness } from "./right/Brightness";
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
@@ -35,6 +36,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
           <Keyboard />
           <Speaker />
           <Microphone />
+          <Brightness />
           <Battery />
           <Tray />
           <Gamemode />
