@@ -67,6 +67,16 @@ window.bar {
                 }
             }
         }
+
+        .brightness {
+            padding: 1px;
+            levelbar trough block {
+                border-radius: 10px;
+                &.filled {
+                    background-color: gray;
+                }
+            }
+        }
     }
 
     button {

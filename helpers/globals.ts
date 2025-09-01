@@ -4,6 +4,7 @@ import Bluetooth from "gi://AstalBluetooth";
 import Tray from "gi://AstalTray";
 import Battery from "gi://AstalBattery";
 import Wp from "gi://AstalWp";
+import Brightness from "./bindings/brightness";
 export { default as config } from "../config.json";
 
 export const hyprland = Hyprland.get_default();
@@ -11,6 +12,7 @@ export const bluetooth = Bluetooth.get_default();
 export const tray = Tray.get_default();
 export const battery = Battery.get_default();
 export const wp = Wp.get_default();
+export const brightness = Brightness.get_default();
 
 export const media = Variable("").watch(
   [
