@@ -1,5 +1,6 @@
 import { bind, execAsync } from "astal";
 import { battery } from "../../helpers/globals";
+import AstalBattery from "gi://AstalBattery?version=0.1";
 
 export function Battery(): JSX.Element {
   return (
@@ -11,6 +12,10 @@ export function Battery(): JSX.Element {
     }}>
       <box className="battery" spacing={4}>
         {/* <icon icon={bind(battery, "batteryIconName")} /> */}
+        <label
+          visible={bind(battery, "state").as((p) => p === AstalBattery.State.PENDING_CHARGE)}
+          label="!"
+        />
         <label label={bind(battery, "charging").as((x) => x ? "󰂄" : "󰁹")} />
         <overlay widthRequest={80} className={bind(battery, "charging").as((x) => x ? "charging" : "discharging")}>
           <levelbar
@@ -23,6 +28,9 @@ export function Battery(): JSX.Element {
             label={bind(battery, "percentage").as((p) => `${Math.floor(p * 100)}%`)}
           />
         </overlay>
+        <label
+          label={bind(battery, "energyRate").as((p) => `${Math.round(p)}W`)}
+        />
       </box>
     </button>
   );
