@@ -20,12 +20,12 @@ App.start({
       bars.delete(gdkmonitor);
     });
 
-    hyprland.connect("client-added", async (_, client) => {
-      if (client.get_initial_title() === "Zen Browser") {
-        await new Promise(r => setTimeout(r, 1000));
-        client.toggle_floating();
-        client.toggle_floating();
-      }
-    });
+    // hyprland.connect("client-added", async (_, client) => {
+    //   if (client.get_initial_title() === "Zen Browser") {
+    //     await new Promise(r => setTimeout(r, 1000));
+    //     client.toggle_floating();
+    //     client.toggle_floating();
+    //   }
+    // });
   },
 });
